@@ -1,4 +1,5 @@
 {
+  "homepage": "https://nanphipatwongted.github.io/my-profile-resume",
   "name": "my-profile-resume",
   "version": "0.1.0",
   "private": true,
@@ -6,11 +7,14 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "framer-motion": "^12.23.6",
+    "gh-pages": "^6.3.0",
     "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"
