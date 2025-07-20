@@ -68,7 +68,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 1 }}
                 className="absolute top-4 right-4 rounded-md p-4 shadow-lg w-80 text-black bg-white flex flex-col justify-between z-20"
               >
                 <div className="flex flex-col space-y-4">
@@ -100,7 +100,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 100 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 1 }}
               className="text-4xl md:text-8xl font-bold text-white"
             >
               NANPHIPAT WONGTED
@@ -112,7 +112,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 100, y: 0 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, x: 100, y: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 1 }}
               className="text-2xl text-right font-bold text-white"
             >
               Frontend Developer
@@ -122,7 +122,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 100, y: 0 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, x: 100, y: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 1 }}
               className="text-lg font-light indent-8 bg-white text-black p-4 rounded-2xl"
             >
               {seeMore ? fullText : shortText}
@@ -139,7 +139,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 100 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 1 }}
             className="flex h-20 absolute bottom-0 w-full z-10"
           >
             <div className="flex-1 flex items-center justify-center text-xl text-white">
@@ -167,7 +167,7 @@ export default function Home() {
       <div className="flex md:hidden min-h-screen relative w-full h-full">
         <div className="w-full">
           <div
-            className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105 pointer-events-none"
+            className="absolute inset-0 bg-cover bg-center filter blur-sm scale-100 pointer-events-none"
             style={{ backgroundImage: "url('/profile.jpeg')" }}
           />
 
@@ -186,7 +186,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: 50, y: 0 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   exit={{ opacity: 0, x: 50, y: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 1 }}
                   className="absolute top-4 right-4 rounded-md p-4 shadow-lg w-65 text-black bg-white flex flex-col justify-between text-xs z-10"
                 >
                   <div className="flex flex-col space-y-4">
@@ -215,7 +215,7 @@ export default function Home() {
               )}
             </AnimatePresence>
 
-            <div className="w-full h-64 relative overflow-hidden group rounded-xl mt-20">
+            <div className="w-full h-64 relative overflow-hidden group mt-20">
               <Image
                 src="/profile.jpeg"
                 alt="Profile Image"
@@ -230,7 +230,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 1 }}
                 className="text-4xl font-bold text-white"
               >
                 NANPHIPAT WONGTED
@@ -241,7 +241,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 1 }}
                 className="text-2xl text-right font-bold text-white"
               >
                 Frontend Developer
@@ -251,7 +251,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 1 }}
                 className="text-lg font-light text-black indent-8 bg-white p-4 rounded-2xl"
               >
                 {seeMore ? fullText : shortText}
@@ -270,7 +270,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 1 }}
           className="flex h-20 absolute bottom-0 w-full z-10 space-x-2 px-2"
         >
           <div className="flex-1 flex items-center justify-center text-base text-white">

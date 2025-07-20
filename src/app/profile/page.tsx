@@ -30,8 +30,14 @@ export default function Profile() {
         <div
           className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
           style={{ backgroundImage: "url('/profile.jpeg')" }}
-        ></div>
-        <div className="text-black absolute bg-white w-2/3 rounded-2xl flex p-10 space-x-4">
+        />
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 100 }}
+          transition={{ duration: 1 }}
+          className="text-black absolute bg-white w-2/3 rounded-2xl flex p-10 space-x-4"
+        >
           <div className="w-1/2 relative aspect-square">
             <div className="relative aspect-square overflow-hidden rounded-full group hover:shadow-2xl">
               <Image
@@ -49,7 +55,7 @@ export default function Profile() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 1.2 }}
                 className="text-4xl font-bold"
               >
                 {dataUser.name}
@@ -58,7 +64,7 @@ export default function Profile() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 1.3 }}
                 className="text-2xl font-bold"
               >
                 {dataUser.position}
@@ -70,7 +76,7 @@ export default function Profile() {
                   initial={{ opacity: 0, x: 100, y: 0 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   exit={{ opacity: 0, x: 100, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 1.5 }}
                 >
                   <div className="text-xl font-bold pb-1">About Me</div>
                   <div className="text-sm text-gray-700">
@@ -82,7 +88,7 @@ export default function Profile() {
                   initial={{ opacity: 0, x: 100, y: 0 }}
                   animate={{ opacity: 1, x: 0, y: 0 }}
                   exit={{ opacity: 0, x: 100, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 1.5 }}
                 >
                   <div className="text-xl font-bold pb-1">Skill</div>
                   <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
@@ -96,7 +102,7 @@ export default function Profile() {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 2 }}
                 className="flex w-full justify-center space-x-4 pt-5"
               >
                 <div className="flex-1 flex items-center justify-center text-black">
@@ -136,7 +142,7 @@ export default function Profile() {
           >
             Main
           </button>
-        </div>
+        </motion.div>
       </div>
 
       <div className="min-h-screen flex md:hidden flex-col items-center relative">
@@ -163,7 +169,7 @@ export default function Profile() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 1.1 }}
                 className="text-xl font-bold text-center"
               >
                 {dataUser.name}
@@ -172,7 +178,7 @@ export default function Profile() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 1.3 }}
                 className="text-lg text-center"
               >
                 {dataUser.position}
@@ -183,7 +189,7 @@ export default function Profile() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 1.5 }}
               >
                 <div className="text-xl font-bold pb-1">About Me</div>
                 <div className="text-sm text-gray-700">{dataUser.about_me}</div>
@@ -193,7 +199,7 @@ export default function Profile() {
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 1.5 }}
               >
                 <div className="text-xl font-bold pb-1">Skill</div>
                 <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
@@ -206,7 +212,7 @@ export default function Profile() {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 2 }}
                 className="flex w-full justify-center space-x-4 py-5"
               >
                 <div className="flex-1 flex items-center justify-center text-black">
@@ -228,7 +234,7 @@ export default function Profile() {
               </motion.div>
             </div>
           ) : (
-            <div className="flex w-1/2 flex-col gap-4 opacity-30 px-6">
+            <div className="flex w-full flex-col gap-4 opacity-30 p-6">
               <div className="skeleton h-4 w-28"></div>
               <div className="skeleton h-4 w-full"></div>
               <div className="skeleton h-4 w-full"></div>
