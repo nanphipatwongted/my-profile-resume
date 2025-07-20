@@ -1,4 +1,3 @@
-// ✅ Next.js App Router API route syntax
 export async function GET() {
   const profile = {
     name: "NANPHIPAT WONGTED",

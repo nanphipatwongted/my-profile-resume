@@ -4,14 +4,22 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+interface Profile {
+  name: string;
+  position: string;
+  image: string;
+  skill: string[];
+  about_me: string;
+}
+
 export default function Profile() {
   const router = useRouter();
-  const [dataUser, setDataUser] = useState<any>();
+  const [dataUser, setDataUser] = useState<Profile | null>(null);
 
   useEffect(() => {
     fetch("/api/profile")
       .then((res) => res.json())
-      .then(({ data }) => {
+      .then(({ data }: { data: Profile }) => {
         setDataUser(data);
       });
   }, []);
@@ -78,7 +86,7 @@ export default function Profile() {
                 >
                   <div className="text-xl font-bold pb-1">Skill</div>
                   <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
-                    {dataUser.skill.map((item: String, index: number) => (
+                    {dataUser.skill.map((item: string, index: number) => (
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
@@ -188,7 +196,7 @@ export default function Profile() {
               >
                 <div className="text-xl font-bold pb-1">Skill</div>
                 <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
-                  {dataUser.skill.map((item: String, index: number) => (
+                  {dataUser.skill.map((item: string, index: number) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
