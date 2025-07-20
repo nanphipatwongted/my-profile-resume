@@ -28,7 +28,7 @@ export default function Profile() {
     <>
       <div className="min-h-screen md:flex hidden flex-col justify-center items-center relative">
         <div
-          className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
+          className="absolute inset-0 bg-cover bg-center filter blur-sm scale-100"
           style={{ backgroundImage: "url('/profile.jpeg')" }}
         />
         <motion.div
@@ -107,7 +107,7 @@ export default function Profile() {
               >
                 <div className="flex-1 flex items-center justify-center text-black">
                   <button
-                    //   onClick={() => router.push("/profile")}
+                    onClick={() => router.push("/education")}
                     className="border border-black rounded-md hover:text-white hover:bg-black cursor-pointer w-full hover:shadow-2xl"
                   >
                     Edudation
@@ -115,7 +115,7 @@ export default function Profile() {
                 </div>
                 <div className="flex-1 flex items-center justify-center text-black">
                   <button
-                    //   onClick={() => router.push("/profile")}
+                    onClick={() => router.push("/work")}
                     className="border border-black rounded-md hover:text-white hover:bg-black cursor-pointer w-full hover:shadow-2xl"
                   >
                     Work Experience
@@ -147,7 +147,7 @@ export default function Profile() {
 
       <div className="min-h-screen flex md:hidden flex-col items-center relative">
         <div
-          className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
+          className="absolute inset-0 bg-cover bg-center filter blur-sm scale-100"
           style={{ backgroundImage: "url('/profile.jpeg')" }}
         />
 
@@ -217,7 +217,7 @@ export default function Profile() {
               >
                 <div className="flex-1 flex items-center justify-center text-black">
                   <button
-                    //   onClick={() => router.push("/profile")}
+                    onClick={() => router.push("/education")}
                     className="border border-black rounded-md hover:text-white hover:bg-black cursor-pointer w-full hover:shadow-2xl"
                   >
                     Edudation
@@ -225,7 +225,7 @@ export default function Profile() {
                 </div>
                 <div className="flex-1 flex items-center justify-center text-black">
                   <button
-                    //   onClick={() => router.push("/profile")}
+                    onClick={() => router.push("/work")}
                     className="border border-black rounded-md hover:text-white hover:bg-black cursor-pointer w-full hover:shadow-2xl"
                   >
                     Work Experience

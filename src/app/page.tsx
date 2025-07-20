@@ -151,12 +151,18 @@ export default function Home() {
               </button>
             </div>
             <div className="flex-1 flex items-center justify-center text-xl text-white">
-              <button className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer">
+              <button
+                onClick={() => router.push("/education")}
+                className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer"
+              >
                 Education
               </button>
             </div>
             <div className="flex-1 flex items-center justify-center text-xl text-white">
-              <button className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer">
+              <button
+                onClick={() => router.push("/work")}
+                className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer"
+              >
                 Work Experience
               </button>
             </div>
@@ -282,12 +288,18 @@ export default function Home() {
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center text-base text-white">
-            <button className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer">
+            <button
+              onClick={() => router.push("/education")}
+              className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer"
+            >
               Education
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center text-base text-white">
-            <button className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer">
+            <button
+              onClick={() => router.push("/work")}
+              className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer"
+            >
               Work Experience
             </button>
           </div>
