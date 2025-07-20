@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { ReactNode } from "react";
+import { useRouter } from "next/navigation";
 
 type ContactItemProps = {
   icon: ReactNode;
@@ -25,6 +26,7 @@ const ContactItem = ({ icon, text }: ContactItemProps) => {
 };
 
 export default function Home() {
+  const router = useRouter();
   const [seeMore, setSeeMore] = useState(false);
   const [showContact, setShowContact] = useState(false);
 
@@ -36,15 +38,16 @@ export default function Home() {
   return (
     <>
       <div className="xl:flex hidden min-h-screen">
-        <div className="w-1/3 relative">
+        <div className="w-1/3 relative overflow-hidden group rounded-xl">
           <Image
             src="/profile.jpeg"
             alt="Profile Image"
             fill
-            style={{ objectFit: "cover" }}
+            className="object-cover transition-transform duration-500 group-hover:scale-200"
             priority
           />
         </div>
+
         <div className="w-2/3 flex flex-col relative overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-right filter blur-sm scale-100 pointer-events-none"
@@ -52,59 +55,76 @@ export default function Home() {
           ></div>
 
           <div className="relative flex flex-col space-y-4 p-20 flex-1 justify-center text-white z-10">
-            <AnimatePresence>
-              {!showContact ? (
-                <button
-                  className="absolute top-4 right-4 border text-white rounded-md hover:text-black cursor-pointer px-4"
-                  onClick={() => setShowContact(true)}
-                >
-                  Contact
-                </button>
-              ) : (
-                <motion.div
-                  key="contact-box"
-                  initial={{ opacity: 0, x: 100, y: 0 }}
-                  animate={{ opacity: 1, x: 0, y: 0 }}
-                  exit={{ opacity: 0, x: 100, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute top-4 right-4 rounded-md p-4 shadow-lg w-80 text-black bg-white flex flex-col justify-between z-20"
-                >
-                  <div className="flex flex-col space-y-4">
-                    <ContactItem
-                      icon={<PhoneIcon className="w-6 h-6" />}
-                      text="0926258828"
-                    />
-                    <ContactItem
-                      icon={<EnvelopeIcon className="w-6 h-6" />}
-                      text="nanphipat.wongted@icloud.com"
-                    />
-                    <ContactItem
-                      icon={<MapPinIcon className="w-6 h-6" />}
-                      text="Samutprakarn Thailand"
-                    />
-                  </div>
-                  <div className="flex justify-center mt-4">
-                    <button
-                      className="border border-black text-black hover:text-gray-700 hover:border-gray-700 font-semibold px-4 py-1 rounded cursor-pointer"
-                      onClick={() => setShowContact(false)}
-                    >
-                      Close
-                    </button>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {!showContact ? (
+              <button
+                className="absolute top-4 right-4 border text-white rounded-md hover:text-black cursor-pointer px-4"
+                onClick={() => setShowContact(true)}
+              >
+                Contact
+              </button>
+            ) : (
+              <motion.div
+                key="contact-box"
+                initial={{ opacity: 0, x: 100, y: 0 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                exit={{ opacity: 0, x: 100, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-4 right-4 rounded-md p-4 shadow-lg w-80 text-black bg-white flex flex-col justify-between z-20"
+              >
+                <div className="flex flex-col space-y-4">
+                  <ContactItem
+                    icon={<PhoneIcon className="w-6 h-6" />}
+                    text="0926258828"
+                  />
+                  <ContactItem
+                    icon={<EnvelopeIcon className="w-6 h-6" />}
+                    text="nanphipat.wongted@icloud.com"
+                  />
+                  <ContactItem
+                    icon={<MapPinIcon className="w-6 h-6" />}
+                    text="Samutprakarn Thailand"
+                  />
+                </div>
+                <div className="flex justify-center mt-4">
+                  <button
+                    className="border border-black text-black hover:text-gray-700 hover:border-gray-700 font-semibold px-4 py-1 rounded cursor-pointer"
+                    onClick={() => setShowContact(false)}
+                  >
+                    Close
+                  </button>
+                </div>
+              </motion.div>
+            )}
 
-            <div className="text-8xl font-bold text-white">
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+              transition={{ duration: 0.2 }}
+              className="text-4xl md:text-8xl font-bold text-white"
+            >
               NANPHIPAT WONGTED
-            </div>
+            </motion.div>
+
             <div className="h-px bg-white my-4"></div>
 
-            <div className="text-2xl text-right font-bold text-white">
+            <motion.div
+              initial={{ opacity: 0, x: 100, y: 0 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              exit={{ opacity: 0, x: 100, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="text-2xl text-right font-bold text-white"
+            >
               Frontend Developer
-            </div>
+            </motion.div>
 
-            <div className="text-lg font-light indent-8 bg-white text-black p-4 rounded-2xl">
+            <motion.div
+              initial={{ opacity: 0, x: 100, y: 0 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              exit={{ opacity: 0, x: 100, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="text-lg font-light indent-8 bg-white text-black p-4 rounded-2xl"
+            >
               {seeMore ? fullText : shortText}
               <button
                 onClick={() => setSeeMore(!seeMore)}
@@ -112,12 +132,21 @@ export default function Home() {
               >
                 {seeMore ? "Show Less" : "Read More"}
               </button>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="flex h-20 absolute bottom-0 w-full z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{ duration: 0.2 }}
+            className="flex h-20 absolute bottom-0 w-full z-10"
+          >
             <div className="flex-1 flex items-center justify-center text-xl text-white">
-              <button className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer">
+              <button
+                onClick={() => router.push("/profile")}
+                className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer"
+              >
                 Profile
               </button>
             </div>
@@ -131,7 +160,7 @@ export default function Home() {
                 Work Experience
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -190,16 +219,34 @@ export default function Home() {
             </AnimatePresence>
 
             <div className="flex flex-col space-y-4 py-20 px-5 flex-1">
-              <div className="text-4xl font-bold text-white">
+              <motion.div
+                initial={{ opacity: 0, x: 100, y: 0 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                exit={{ opacity: 0, x: 100, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-4xl font-bold text-white"
+              >
                 NANPHIPAT WONGTED
-              </div>
+              </motion.div>
               <div className="h-px bg-white my-4"></div>
 
-              <div className="text-2xl text-right font-bold text-white">
+              <motion.div
+                initial={{ opacity: 0, x: 100, y: 0 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                exit={{ opacity: 0, x: 100, y: 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-2xl text-right font-bold text-white"
+              >
                 Frontend Developer
-              </div>
+              </motion.div>
 
-              <div className="text-lg font-light text-black indent-8 bg-white p-4 rounded-2xl">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 100 }}
+                transition={{ duration: 0.2 }}
+                className="text-lg font-light text-black indent-8 bg-white p-4 rounded-2xl"
+              >
                 {seeMore ? fullText : shortText}
                 <button
                   onClick={() => setSeeMore(!seeMore)}
@@ -207,12 +254,21 @@ export default function Home() {
                 >
                   {seeMore ? "Show Less" : "Read More"}
                 </button>
-              </div>
+              </motion.div>
             </div>
 
-            <div className="flex h-20 space-x-2 px-2">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              transition={{ duration: 0.2 }}
+              className="flex h-20 absolute bottom-0 w-full z-10 space-x-2 px-2"
+            >
               <div className="flex-1 flex items-center justify-center text-base text-white">
-                <button className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer">
+                <button
+                  onClick={() => router.push("/profile")}
+                  className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer"
+                >
                   Profile
                 </button>
               </div>
@@ -226,7 +282,7 @@ export default function Home() {
                   Work Experience
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

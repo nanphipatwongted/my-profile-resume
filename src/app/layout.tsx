@@ -11,7 +11,7 @@ const teachers = Teachers({
 });
 
 export const metadata: Metadata = {
-  title: "My REsume",
+  title: "My Resume",
 };
 
 export default function RootLayout({
