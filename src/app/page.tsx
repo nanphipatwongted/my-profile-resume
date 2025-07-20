@@ -164,7 +164,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex md:hidden min-h-screen">
+      <div className="flex md:hidden min-h-screen relative w-full h-full">
         <div className="w-full">
           <Image
             src="/profile.jpeg"

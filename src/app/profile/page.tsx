@@ -143,8 +143,9 @@ export default function Profile() {
         <div
           className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105"
           style={{ backgroundImage: "url('/profile.jpeg')" }}
-        ></div>
-        <div className="text-black absolute bg-white w-3/4 rounded-2xl flex flex-col p-4 space-x-4 my-10">
+        />
+
+        <div className="relative text-black bg-white w-3/4 rounded-2xl flex flex-col p-4 space-x-4 my-10">
           <div className="w-full relative aspect-square">
             <div className="relative aspect-square overflow-hidden rounded-full group">
               <Image
@@ -237,11 +238,10 @@ export default function Profile() {
               <div className="skeleton h-4 w-full"></div>
             </div>
           )}
-
           <button
             onClick={() => router.push("/")}
-            style={{ bottom: "-1rem" }}
             className="absolute left-1/2 transform -translate-x-1/2 px-10 py-1 rounded-md text-white bg-teal-700 hover:text-black hover:bg-white hover:shadow-2xl cursor-pointer"
+            style={{ bottom: "-1rem" }}
           >
             Main
           </button>
