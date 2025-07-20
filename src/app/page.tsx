@@ -37,7 +37,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="xl:flex hidden min-h-screen">
+      <div className="md:flex hidden min-h-screen">
         <div className="w-1/3 relative overflow-hidden group rounded-xl">
           <Image
             src="/profile.jpeg"
@@ -164,7 +164,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex xl:hidden min-h-screen">
+      <div className="flex md:hidden min-h-screen">
         <div className="w-full">
           <Image
             src="/profile.jpeg"
