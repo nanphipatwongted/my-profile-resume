@@ -39,8 +39,18 @@ export default function Profile() {
           transition={{ duration: 1 }}
           className="relative z-10 w-full overflow-y-auto max-h-screen flex justify-center items-start p-6"
         >
-          <div className="bg-white w-3/4 rounded-2xl flex flex-col md:flex-row p-6 space-x-4 relative items-center">
-            <div className="w-full md:w-1/2 relative aspect-square p-4">
+          <div className="bg-white w-3/4 rounded-2xl flex flex-wrap p-6 relative items-center">
+            <motion.div
+              initial={{ opacity: 0, x: 100, y: 0 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              exit={{ opacity: 0, x: 100, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl font-bold text-center p-2 bg-gray-100 rounded-2xl text-black w-full"
+            >
+              Profile
+            </motion.div>
+
+            <div className="w-1/2 relative aspect-square p-10">
               <div className="relative aspect-square overflow-hidden rounded-full group">
                 <Image
                   src="/profile-2.jpeg"
@@ -129,7 +139,6 @@ export default function Profile() {
               </div>
             )}
 
-            {/* ปุ่มกลับ */}
             <button
               onClick={() => router.push("/")}
               className="absolute left-1/2 transform -translate-x-1/2 bottom-[-1rem] px-10 py-1 rounded-md text-white bg-teal-700 hover:text-black hover:bg-white hover:shadow-2xl cursor-pointer"
