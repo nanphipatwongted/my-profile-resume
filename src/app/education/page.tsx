@@ -35,8 +35,17 @@ export default function Education() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 1 }}
-          className="text-black absolute bg-white w-2/3 rounded-2xl flex flex-col p-10 space-x-4"
+          className="text-black absolute bg-white w-2/3 rounded-2xl flex flex-col p-6 space-x-4"
         >
+          <motion.div
+            initial={{ opacity: 0, x: 100, y: 0 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            exit={{ opacity: 0, x: 100, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold text-center p-2 bg-gray-100 rounded-2xl"
+          >
+            Education
+          </motion.div>
           <AnimatePresence>
             {dataEducation ? (
               <motion.div
@@ -139,6 +148,15 @@ export default function Education() {
           transition={{ duration: 1 }}
           className="relative text-black bg-white w-3/4 rounded-2xl flex flex-col p-4 space-x-4 my-10"
         >
+          <motion.div
+            initial={{ opacity: 0, x: 100, y: 0 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            exit={{ opacity: 0, x: 100, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl font-bold text-center p-2 bg-gray-100 rounded-2xl w-full mb-2"
+          >
+            Education
+          </motion.div>
           <AnimatePresence>
             {dataEducation ? (
               <motion.div

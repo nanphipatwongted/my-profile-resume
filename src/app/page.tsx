@@ -142,7 +142,7 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="flex h-20 absolute bottom-0 w-full z-10"
           >
-            <div className="flex-1 flex items-center justify-center text-xl text-white">
+            <div className="flex-1 flex items-center justify-center text-white">
               <button
                 onClick={() => router.push("/profile")}
                 className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer"
@@ -150,7 +150,7 @@ export default function Home() {
                 Profile
               </button>
             </div>
-            <div className="flex-1 flex items-center justify-center text-xl text-white">
+            <div className="flex-1 flex items-center justify-center text-white">
               <button
                 onClick={() => router.push("/education")}
                 className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer"
@@ -158,7 +158,7 @@ export default function Home() {
                 Education
               </button>
             </div>
-            <div className="flex-1 flex items-center justify-center text-xl text-white">
+            <div className="flex-1 flex items-center justify-center text-white">
               <button
                 onClick={() => router.push("/work")}
                 className="border border-white w-1/2 h-1/2 rounded-md hover:text-black hover:bg-white cursor-pointer"
@@ -221,7 +221,7 @@ export default function Home() {
               )}
             </AnimatePresence>
 
-            <div className="w-full h-64 relative overflow-hidden group mt-20">
+            <div className="w-full h-52 relative overflow-hidden group mt-20">
               <Image
                 src="/profile.jpeg"
                 alt="Profile Image"
@@ -231,13 +231,13 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex flex-col space-y-4 py-20 px-5 flex-1">
+            <div className="flex flex-col space-y-4 py-5 px-5 flex-1">
               <motion.div
                 initial={{ opacity: 0, x: 100, y: 0 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-4xl font-bold text-white"
+                className="text-2xl font-bold text-white"
               >
                 NANPHIPAT WONGTED
               </motion.div>
@@ -248,7 +248,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 100, y: 0 }}
                 transition={{ duration: 1 }}
-                className="text-2xl text-right font-bold text-white"
+                className="text-lg text-right font-bold text-white"
               >
                 Frontend Developer
               </motion.div>
@@ -258,7 +258,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 100 }}
                 transition={{ duration: 1 }}
-                className="text-lg font-light text-black indent-8 bg-white p-4 rounded-2xl"
+                className="text-sm font-light text-black indent-8 bg-white p-4 rounded-2xl"
               >
                 {seeMore ? fullText : shortText}
                 <button
@@ -279,7 +279,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="flex h-20 absolute bottom-0 w-full z-10 space-x-2 px-2"
         >
-          <div className="flex-1 flex items-center justify-center text-base text-white">
+          <div className="flex-1 flex items-center justify-center text-sm text-white">
             <button
               onClick={() => router.push("/profile")}
               className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer"
@@ -287,7 +287,7 @@ export default function Home() {
               Profile
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center text-base text-white">
+          <div className="flex-1 flex items-center justify-center text-sm text-white">
             <button
               onClick={() => router.push("/education")}
               className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer"
@@ -295,7 +295,7 @@ export default function Home() {
               Education
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center text-base text-white">
+          <div className="flex-1 flex items-center justify-center text-sm text-white">
             <button
               onClick={() => router.push("/work")}
               className="border border-white w-full h-1/2 rounded-md hover:text-white hover:bg-teal-700 cursor-pointer"
